@@ -1,0 +1,2 @@
+*.php linguist-detectable=true linguist-language=PHP
+**/*.php linguist-detectable=true linguist-language=PHP
