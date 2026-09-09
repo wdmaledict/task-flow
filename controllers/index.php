@@ -26,15 +26,6 @@ foreach ($lists as $list) {
     ];
 }
 
-// // TEMPORARY DEBUG - remove after we find the issue
-// foreach ($lanes as $lane) {
-//     echo "Lane ID: {$lane['id']}, Title: {$lane['title']}, Count: {$lane['count']}<br>";
-//     foreach ($lane['cards'] as $card) {
-//         echo "&nbsp;&nbsp;→ Card list_id in query: {$card['list_id']}, Title: {$card['title']}<br>";
-//     }
-// }
-// die(); // stop execution here so we can see just this output
-
 view('index.view.php', [
     'heading' => 'Task Flow',
     'lanes' => $lanes
