@@ -11,14 +11,14 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Select all card containers across all Kanban lanes
-        const lanes = document.querySelectorAll('.card-body');
+        const lanes = document.querySelectorAll('.cards-container');
 
         lanes.forEach(lane => {
             new Sortable(lane, {
                 group: 'kanban-board', 
                 animation: 150,        
                 draggable: '.card',    
-                filter: 'button',      
+                filter: 'button, .no-drag, .no-drag *',     
                 ghostClass: 'opacity-50' 
             });
         });
