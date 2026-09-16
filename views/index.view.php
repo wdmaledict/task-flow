@@ -11,15 +11,30 @@
                             <span class="badge rounded-pill <?= $lane['badge_color'] ?> px-2 py-1"><?= $lane['count'] ?></span>
                             <h6 class="mb-0 fw-bold text-white"><?= $lane['title'] ?></h6>
                         </div>
-                        <button class="btn btn-link text-secondary p-0"><i class="bi bi-three-dots"></i></button>
+                        <form action="/lists/delete" method="POST" class="no-drag">
+                            <input type="hidden" name="list_id" value="<?= $lane['id'] ?>">
+                                <button type="submit" class="btn btn-link text-secondary p-0" onclick="return confirm('Delete this list and all its cards?')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                        </form>
                     </div>
 
                     <div class="card-body d-flex flex-column gap-2 p-2">
-                        <div class="cards-container d-flex flex-column gap-2" data-list-id="<?=  $lane['id'] ?>">
+                        <div class="cards-container d-flex flex-column gap-2" data-list-id="<?= $lane['id'] ?>">
                             <?php foreach ($lane['cards'] as $card) : ?>
                                 <div class="card bg-body-tertiary border-secondary-subtle p-3 shadow-sm task-card" style="cursor: grab; border-radius: 8px;" data-card-id="<?= $card['id'] ?>">
-                                    <!-- htmlspecialchars() escapes any HTML/JS a user might enter, preventing XSS -->
-                                    <h6 class="fw-semibold text-white fs-6 mb-1"><?= htmlspecialchars($card['title']) ?></h6>
+                                    <!-- Title and delete button share a row so the delete action stays compact and out of the way -->
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <!-- htmlspecialchars() escapes any HTML/JS a user might enter, preventing XSS -->
+                                        <h6 class="fw-semibold text-white fs-6 mb-1"><?= htmlspecialchars($card['title']) ?></h6>
+                                        <!-- .no-drag keeps SortableJS from treating this form as part of the draggable card -->
+                                        <form action="/cards/delete" method="POST" class="no-drag ms-2">
+                                            <input type="hidden" name="card_id" value="<?= $card['id'] ?>">
+                                            <button type="submit" class="btn btn-sm btn-link text-secondary p-0" style="line-height: 1;">
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                     <?php if (!empty($card['description'])) : ?>
                                         <p class="text-secondary small mb-0" style="font-size: 0.85rem;"><?= htmlspecialchars($card['description']) ?></p>
                                     <?php endif; ?>
