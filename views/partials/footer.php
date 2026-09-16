@@ -9,17 +9,34 @@
 
 <!-- Initialize Drag-and-Drop functionality -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Select all card containers across all Kanban lanes
-        const lanes = document.querySelectorAll('.cards-container');
+            document.addEventListener('DOMContentLoaded', () => {
+                // Select all card containers across all Kanban lanes
+                const lanes = document.querySelectorAll('.cards-container');
 
-        lanes.forEach(lane => {
-            new Sortable(lane, {
-                group: 'kanban-board', 
-                animation: 150,        
-                draggable: '.card',    
-                filter: 'button, .no-drag, .no-drag *',     
-                ghostClass: 'opacity-50' 
+                lanes.forEach(lane => {
+                    new Sortable(lane, {
+                        group: 'kanban-board', 
+                        animation: 150,        
+                        draggable: '.card',    
+                        filter: 'button, .no-drag, .no-drag *',     
+                        ghostClass: 'opacity-50', 
+                        onEnd: function (event) {
+                        // event.item is the card element that was moved
+                        // event.to is the list (cards-container) it was dropped into
+                        const cardId = event.item.dataset.cardId;
+                        const newListId = event.to.dataset.listId;
+
+                        fetch('/cards/move', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            card_id: cardId,
+                            list_id: newListId
+                        })
+                    });
+                }
             });
         });
     });

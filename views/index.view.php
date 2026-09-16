@@ -15,9 +15,9 @@
                     </div>
 
                     <div class="card-body d-flex flex-column gap-2 p-2">
-                        <div class="cards-container d-flex flex-column gap-2">
+                        <div class="cards-container d-flex flex-column gap-2" data-list-id="<?=  $lane['id'] ?>">
                             <?php foreach ($lane['cards'] as $card) : ?>
-                                <div class="card bg-body-tertiary border-secondary-subtle p-3 shadow-sm task-card" style="cursor: grab; border-radius: 8px;">
+                                <div class="card bg-body-tertiary border-secondary-subtle p-3 shadow-sm task-card" style="cursor: grab; border-radius: 8px;" data-card-id="<?= $card['id'] ?>">
                                     <!-- htmlspecialchars() escapes any HTML/JS a user might enter, preventing XSS -->
                                     <h6 class="fw-semibold text-white fs-6 mb-1"><?= htmlspecialchars($card['title']) ?></h6>
                                     <?php if (!empty($card['description'])) : ?>
