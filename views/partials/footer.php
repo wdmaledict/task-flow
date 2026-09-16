@@ -18,7 +18,8 @@
                         group: 'kanban-board', 
                         animation: 150,        
                         draggable: '.card',    
-                        filter: 'button, .no-drag, .no-drag *',     
+                        filter: 'button, .no-drag, .no-drag *',
+                        preventOnFilter: false,     
                         ghostClass: 'opacity-50', 
                         onEnd: function (event) {
                         // event.item is the card element that was moved

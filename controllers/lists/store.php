@@ -12,6 +12,12 @@ if ($title === '') {
     exit();
 }
 
+if (strlen($title) > 100) {
+  $_SESSION['errors']['title'] = 'The title is too long (max 100 characters).';
+  header('location: /');
+  exit();
+}
+
 // Find the highest position for this board so the new list goes to the end
 $positionQuery = $db->query('SELECT MAX(position) as max_pos FROM lists WHERE board_id = :board_id', [
     'board_id' => $boardId

@@ -13,6 +13,12 @@ if ($title === '' || $listId === null) {
   exit();
 }
 
+if (strlen($description) > 500) {
+  $_SESSION['errors']['description'] = 'The description is too long (max 500 characters).';
+  header('location: /');
+  exit();
+}
+
 // Find the highest position in this list so the new card goes to the end
 $positionQuery = $db->query('SELECT MAX(position) as max_pos FROM cards WHERE list_id = :list_id', [
   'list_id' => $listId
