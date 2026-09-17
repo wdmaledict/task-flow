@@ -12,25 +12,6 @@
             </nav>
         </div>
 
-        <!-- Right Side: Search, Actions & Profile -->
-        <div class="d-flex align-items-center gap-3">
-            
-            <!-- Search Bar -->
-            <div style="width: 260px;">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-text bg-dark border-secondary-subtle text-secondary">
-                        <i class="bi bi-search"></i>
-                    </span>
-                    <input type="text" class="form-control bg-dark border-secondary-subtle text-white" placeholder="Search tasks...">
-                </div>
-            </div>
-
-            <!-- New Task Button -->
-            <button class="btn btn-primary btn-sm d-flex align-items-center gap-1">
-                <i class="bi bi-plus-lg"></i>
-                <span>New Task</span>
-            </button>
-
             <!-- User Dropdown Menu -->
             <div class="dropdown">
                 <a class="nav-link p-0" data-bs-toggle="dropdown" href="#">

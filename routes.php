@@ -10,3 +10,6 @@ $router->post('/cards', 'controllers/cards/store.php');
 $router->post('/cards/move', 'controllers/cards/move.php');
 $router->post('/cards/delete', 'controllers/cards/destroy.php');
 $router->post('/cards/update', 'controllers/cards/update.php');
+
+$router->post('/register', 'controllers/auth/register.php');
+$router->get('/register', 'controllers/auth/create.php');
