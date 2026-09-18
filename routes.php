@@ -13,3 +13,6 @@ $router->post('/cards/update', 'controllers/cards/update.php');
 
 $router->post('/register', 'controllers/auth/register.php');
 $router->get('/register', 'controllers/auth/create.php');
+
+$router->post('/login', 'controllers/auth/login.php');
+$router->get('/login', 'controllers/auth/login_create.php');

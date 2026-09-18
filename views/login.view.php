@@ -3,19 +3,9 @@
 
 <main class="container py-5" style="max-width: 500px;">
     <div class="card bg-dark border-secondary shadow-sm p-4" style="border-radius: 10px;">
-        <h1 class="h3 mb-4 text-white text-center">Register for Task Flow</h1>
+        <h1 class="h3 mb-4 text-white text-center">Log In to Task Flow</h1>
 
-        <form action="/register" method="POST">
-            <!-- Name Field -->
-            <div class="mb-3">
-                <label for="name" class="form-label text-white">Name</label>
-                <input type="text" name="name" id="name" class="form-control bg-body-tertiary text-white border-secondary" 
-                       value="<?= $_SESSION['old']['name'] ?? '' ?>" placeholder="Enter your name...">
-                <?php if (isset($_SESSION['errors']['name'])): ?>
-                    <p class="text-danger small mt-1 mb-0"><?= $_SESSION['errors']['name'] ?></p>
-                <?php endif; ?>
-            </div>
-
+        <form action="/login" method="POST">
             <!-- Email Field -->
             <div class="mb-3">
                 <label for="email" class="form-label text-white">Email address</label>
@@ -30,13 +20,13 @@
             <div class="mb-4">
                 <label for="password" class="form-label text-white">Password</label>
                 <input type="password" name="password" id="password" class="form-control bg-body-tertiary text-white border-secondary" 
-                       placeholder="Enter password (min 6 characters)...">
+                       placeholder="Enter your password...">
                 <?php if (isset($_SESSION['errors']['password'])): ?>
                     <p class="text-danger small mt-1 mb-0"><?= $_SESSION['errors']['password'] ?></p>
                 <?php endif; ?>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Register</button>
+            <button type="submit" class="btn btn-primary w-100">Log In</button>
         </form>
     </div>
 </main>
