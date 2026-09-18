@@ -16,3 +16,5 @@ $router->get('/register', 'controllers/auth/create.php');
 
 $router->post('/login', 'controllers/auth/login.php');
 $router->get('/login', 'controllers/auth/login_create.php');
+
+$router->post('/logout', 'controllers/auth/destroy.php');
