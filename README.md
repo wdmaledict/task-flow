@@ -2,11 +2,10 @@ A modern, lightweight Kanban board application built from scratch using custom P
 
 ## 🚀 Features
 
-* **Custom MVC Architecture:** Clean separation of concerns with a dedicated routing system, controllers, and views.
-* **Database Integration:** Secure PDO-powered database wrapper (`Core/Database.php`) for dynamic task management.
-* **Interactive Kanban Board:** Drag-and-drop task sorting powered by SortableJS.
-* **Modern UI/UX:** Styled using Bootstrap 5 and AdminLTE 4 component layouts with custom CSS overrides.
-
+- **User Authentication:** Secure registration and login with hashed passwords (`password_hash`/`password_verify`), server-side session management, and protection against session fixation attacks.
+- **Full CRUD for Lists & Cards:** Create, rename, edit, and delete both lists and cards, with cascading deletes handled at the database level.
+- **AJAX Drag & Drop:** Card positions persist to the database via a `fetch()`-based endpoint, powered by SortableJS on the frontend.
+- **Security-Conscious Design:** Input sanitization with `htmlspecialchars()`, prepared statements throughout to prevent SQL injection, generic authentication error messages to prevent user enumeration, and server-side validation alongside client-side checks.
 ## 🛠️ Tech Stack
 
 * **Backend:** PHP 8+, PDO (PHP Data Objects)
@@ -40,3 +39,4 @@ Place the project inside your Herd directory and access it via your local domain
 Option B: Built-in PHP Development Server
 Navigate to the public directory and run:
 php -S localhost:8000
+
