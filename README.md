@@ -15,9 +15,10 @@ A modern, lightweight Kanban board application built from scratch using custom P
 ## 📁 Project Structure
 
 ```text
-task-flow/
 ├── Core/               # Framework core (Container, Database, Router, App)
 ├── controllers/        # Application controllers
+├── database/           # Database schema (SQL dump, no data)
+├── postman/            # Postman collection + docs for API/middleware testing
 ├── public/             # Web root (index.php entry point and assets)
 ├── views/              # View templates and partials
 ├── bootstrap.php       # Application container and dependency injection setup
@@ -25,9 +26,16 @@ task-flow/
 ├── routes.php          # Application routing definitions
 └── .gitattributes
 
-⚙️ Setup & Installation
+​```
+
+## ⚙️ Setup & Installation
+
 Clone the repository:
 git clone https://github.com/wdmaledict/task-flow.git
+
+Import the database schema:
+mysql -u root task-flow < database/schema.sql
+(or import database/schema.sql via Sequel Ace / your preferred MySQL client)
 
 Configure your database settings in config.php.
 
@@ -39,4 +47,8 @@ Place the project inside your Herd directory and access it via your local domain
 Option B: Built-in PHP Development Server
 Navigate to the public directory and run:
 php -S localhost:8000
+
+## 🧪 Testing
+
+The `postman/` folder contains a Postman collection covering the `auth`/`guest` route middleware — both unauthenticated (blocked) and authenticated (passthrough) scenarios, with automated test assertions. See `postman/TESTING.md` for setup instructions.
 
