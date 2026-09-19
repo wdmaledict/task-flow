@@ -26,7 +26,7 @@ A modern, lightweight Kanban board application built from scratch using custom P
 ├── routes.php          # Application routing definitions
 └── .gitattributes
 
-​```
+```
 
 ## ⚙️ Setup & Installation
 
