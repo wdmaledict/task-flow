@@ -1,0 +1,1046 @@
+{
+  "info": {
+    "_postman_id": "a9b7999b-bc09-4179-883f-48bcdf92c1ad",
+    "name": "task-flow",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25304756"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Login successful - redirected to board\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Project Board\");",
+                  "});",
+                  "",
+                  "pm.test(\"Session cookie was set\", function () {",
+                  "    pm.expect(pm.cookies.has(\"PHPSESSID\")).to.be.true;",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "{{email}}",
+                  "type": "text",
+                  "uuid": "35f7793e-97cc-47ee-ba61-1ad0d3f24145"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text",
+                  "uuid": "a2d7b0e9-e6b8-46c5-acab-f9a076be8a08"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/login",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "http://task-flow.test/logout",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Lists",
+      "item": [
+        {
+          "name": "Update - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "5b5a3d76-b20a-46e1-9d59-7d0c2779dc76"
+                },
+                {
+                  "key": "title",
+                  "value": "Test List",
+                  "type": "text",
+                  "uuid": "9722449a-84d5-4680-bea3-a57bc2a468b1"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/lists/update",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "5b5a3d76-b20a-46e1-9d59-7d0c2779dc76"
+                },
+                {
+                  "key": "title",
+                  "value": "Test List",
+                  "type": "text",
+                  "uuid": "9722449a-84d5-4680-bea3-a57bc2a468b1"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/lists",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://task-flow.test/lists?board_id&title=Test Board",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists"
+              ],
+              "query": [
+                {
+                  "key": "board_id",
+                  "value": null
+                },
+                {
+                  "key": "title",
+                  "value": "Test Board"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "19249323-4a0e-405a-887e-2b914ff64a02"
+                },
+                {
+                  "key": "title",
+                  "value": "Test List",
+                  "type": "text",
+                  "uuid": "d7c9835a-2087-4e2d-9bae-9426eca9199e"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/lists/delete",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "item": [
+        {
+          "name": "Store - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "35f7793e-97cc-47ee-ba61-1ad0d3f24145"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Card",
+                  "type": "text",
+                  "uuid": "a2d7b0e9-e6b8-46c5-acab-f9a076be8a08"
+                },
+                {
+                  "key": "description",
+                  "value": "Test Description",
+                  "type": "text",
+                  "uuid": "6b677745-624a-4e2e-a10f-e4de38ef29db"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Move - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "35f7793e-97cc-47ee-ba61-1ad0d3f24145"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Card",
+                  "type": "text",
+                  "uuid": "a2d7b0e9-e6b8-46c5-acab-f9a076be8a08"
+                },
+                {
+                  "key": "description",
+                  "value": "Test Description",
+                  "type": "text",
+                  "uuid": "6b677745-624a-4e2e-a10f-e4de38ef29db"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards/move",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards",
+                "move"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update  - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "35f7793e-97cc-47ee-ba61-1ad0d3f24145"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Card",
+                  "type": "text",
+                  "uuid": "a2d7b0e9-e6b8-46c5-acab-f9a076be8a08"
+                },
+                {
+                  "key": "description",
+                  "value": "Test Description",
+                  "type": "text",
+                  "uuid": "6b677745-624a-4e2e-a10f-e4de38ef29db"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "28",
+                  "type": "text",
+                  "uuid": "35f7793e-97cc-47ee-ba61-1ad0d3f24145"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Card",
+                  "type": "text",
+                  "uuid": "a2d7b0e9-e6b8-46c5-acab-f9a076be8a08"
+                },
+                {
+                  "key": "description",
+                  "value": "Test Description",
+                  "type": "text",
+                  "uuid": "6b677745-624a-4e2e-a10f-e4de38ef29db"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete - Unauthenticated",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Blocked - redirected to login\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "35f7793e-97cc-47ee-ba61-1ad0d3f24145"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Card",
+                  "type": "text",
+                  "uuid": "a2d7b0e9-e6b8-46c5-acab-f9a076be8a08"
+                },
+                {
+                  "key": "description",
+                  "value": "Test Description",
+                  "type": "text",
+                  "uuid": "6b677745-624a-4e2e-a10f-e4de38ef29db"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authenticated",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "{{email}}",
+                  "type": "text",
+                  "uuid": "29b1f5da-87f2-4b02-994f-62555d34064c"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text",
+                  "uuid": "b73711c1-d3bc-42bb-a135-beb4ebaa733c"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/login",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Lists - Store",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "Test Test",
+                  "type": "text",
+                  "uuid": "65f9be08-b52e-4dfd-abe8-21d9e51aa789"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/lists",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Lists - Update",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "38",
+                  "type": "text",
+                  "uuid": "fe6e94e6-4173-46d7-8173-d19f468d5ed8"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Test",
+                  "type": "text",
+                  "uuid": "5155836e-2e0c-4c0c-a4ef-0e06d70a73fd"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/lists/update",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Lists - Delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "list_id",
+                  "value": "38",
+                  "type": "text",
+                  "uuid": "1a757b57-d5ee-4720-bd83-1ff90305c750"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/lists/delete",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "lists",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cards- Store",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "card_id",
+                  "value": "26",
+                  "type": "text",
+                  "uuid": "c1fe8ba2-cd5b-49fa-8899-3518a77a6cc4"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "5813b709-8a32-40b3-9e44-cb769fbf8696"
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "17e6767e-dc60-416c-adcf-89213badc392"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards/delete",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cards- Move",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Card moved successfully\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.json().success).to.be.true;",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"card_id\": 1, \"list_id\": 2}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards/move",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards",
+                "move"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cards- Update",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "card_id",
+                  "value": "29",
+                  "type": "text",
+                  "uuid": "e0f7edb9-9596-4332-8cbd-6be35033670d"
+                },
+                {
+                  "key": "title",
+                  "value": "Test Card",
+                  "type": "text",
+                  "uuid": "4474af0b-3155-47d1-8a6c-9702b16b9c04"
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "237bbe43-a02f-4f3c-a8cd-4b0a8bb0cebb"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards/update",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cards- Delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Request succeeded (not redirected to login)\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Log In to Task Flow\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "card_id",
+                  "value": "29",
+                  "type": "text",
+                  "uuid": "92e2c3af-1f1e-4733-be61-03d0fd9f405f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://task-flow.test/cards/delete",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "cards",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://task-flow.test/logout",
+              "protocol": "http",
+              "host": [
+                "task-flow",
+                "test"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

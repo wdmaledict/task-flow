@@ -1,0 +1,602 @@
+{
+	"id": "28d44f34-ce7c-48bf-a515-d3ccb3e8c322",
+	"name": "task-flow",
+	"timestamp": "2026-09-19T11:03:09.009Z",
+	"collection_id": "25304756-a9b7999b-bc09-4179-883f-48bcdf92c1ad",
+	"folder_id": 0,
+	"environment_id": "25304756-c8c3db4e-e608-494c-b110-2b5c1dcde05b",
+	"totalPass": 18,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-09-19T11:03:07.321Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "07badbeb-5955-489b-aba8-841d4fa20852",
+			"name": "Logout - Unauthenticated",
+			"url": "http://task-flow.test/logout",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "32bd8f9b-00a7-4270-9d45-b6132906df2d",
+			"name": "Update - Unauthenticated",
+			"url": "http://task-flow.test/lists/update",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "29669ff9-753c-4de5-90e7-910b9ac2ecf7",
+			"name": "Create - Unauthenticated",
+			"url": "http://task-flow.test/lists",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "e8e7e1ff-1b88-4ef8-81d5-18aa082e1f5a",
+			"name": "Store - Unauthenticated",
+			"url": "http://task-flow.test/lists?board_id&title=Test Board",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "c22d064e-3c9f-4f56-bb63-019c6ee73cef",
+			"name": "Delete - Unauthenticated",
+			"url": "http://task-flow.test/lists/delete",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "8cc4a1da-c448-4ee5-b8e3-804511ffb5c4",
+			"name": "Store - Unauthenticated",
+			"url": "http://task-flow.test/cards",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "fc88a1d6-d104-4ca9-9c03-a49f17e04c71",
+			"name": "Move - Unauthenticated",
+			"url": "http://task-flow.test/cards/move",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "0a281a61-3951-45da-adb4-9f3207fc3730",
+			"name": "Update  - Unauthenticated",
+			"url": "http://task-flow.test/cards",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "9791ecfb-ef47-4fba-9872-507fab33b1c4",
+			"name": "Create - Unauthenticated",
+			"url": "http://task-flow.test/cards",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "22ad48fb-b855-4e63-bdea-d0dba7eadbbc",
+			"name": "Delete - Unauthenticated",
+			"url": "http://task-flow.test/cards",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Blocked - redirected to login": true
+			},
+			"testPassFailCounts": {
+				"Blocked - redirected to login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Blocked - redirected to login": true
+				}
+			]
+		},
+		{
+			"id": "e1e300c8-3568-4866-abd3-4ec6003caef1",
+			"name": "Login",
+			"url": "http://task-flow.test/login",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "71a4be6c-f89a-443c-8bd1-8e5ae3b3ecc7",
+			"name": "Lists - Store",
+			"url": "http://task-flow.test/lists",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "9ef6fad0-9426-4f55-b581-59e008f55362",
+			"name": "Lists - Update",
+			"url": "http://task-flow.test/lists/update",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "de503a0b-77af-43a1-9277-f8e51feb7e48",
+			"name": "Lists - Delete",
+			"url": "http://task-flow.test/lists/delete",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "aabaf013-a860-4aed-b2f8-4da0025d55fe",
+			"name": "Cards- Store",
+			"url": "http://task-flow.test/cards/delete",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "afa54771-7e79-4d68-b369-2dbc8542b2ee",
+			"name": "Cards- Move",
+			"url": "http://task-flow.test/cards/move",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Card moved successfully": true
+			},
+			"testPassFailCounts": {
+				"Card moved successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Card moved successfully": true
+				}
+			]
+		},
+		{
+			"id": "75e87405-d014-404a-af0f-fef5f79034a9",
+			"name": "Cards- Update",
+			"url": "http://task-flow.test/cards/update",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "89c1b9d5-0f56-4581-bd40-6c83d10eee3d",
+			"name": "Cards- Delete",
+			"url": "http://task-flow.test/cards/delete",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Request succeeded (not redirected to login)": true
+			},
+			"testPassFailCounts": {
+				"Request succeeded (not redirected to login)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Request succeeded (not redirected to login)": true
+				}
+			]
+		},
+		{
+			"id": "076f4fcf-51db-46f4-b9d0-dba9bd742de5",
+			"name": "Logout",
+			"url": "http://task-flow.test/logout",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 144,
+	"collection": {
+		"requests": [
+			{
+				"id": "07badbeb-5955-489b-aba8-841d4fa20852",
+				"method": "POST"
+			},
+			{
+				"id": "32bd8f9b-00a7-4270-9d45-b6132906df2d",
+				"method": "POST"
+			},
+			{
+				"id": "29669ff9-753c-4de5-90e7-910b9ac2ecf7",
+				"method": "POST"
+			},
+			{
+				"id": "e8e7e1ff-1b88-4ef8-81d5-18aa082e1f5a",
+				"method": "POST"
+			},
+			{
+				"id": "c22d064e-3c9f-4f56-bb63-019c6ee73cef",
+				"method": "POST"
+			},
+			{
+				"id": "8cc4a1da-c448-4ee5-b8e3-804511ffb5c4",
+				"method": "POST"
+			},
+			{
+				"id": "fc88a1d6-d104-4ca9-9c03-a49f17e04c71",
+				"method": "POST"
+			},
+			{
+				"id": "0a281a61-3951-45da-adb4-9f3207fc3730",
+				"method": "POST"
+			},
+			{
+				"id": "9791ecfb-ef47-4fba-9872-507fab33b1c4",
+				"method": "POST"
+			},
+			{
+				"id": "22ad48fb-b855-4e63-bdea-d0dba7eadbbc",
+				"method": "POST"
+			},
+			{
+				"id": "e1e300c8-3568-4866-abd3-4ec6003caef1",
+				"method": "POST"
+			},
+			{
+				"id": "71a4be6c-f89a-443c-8bd1-8e5ae3b3ecc7",
+				"method": "POST"
+			},
+			{
+				"id": "9ef6fad0-9426-4f55-b581-59e008f55362",
+				"method": "POST"
+			},
+			{
+				"id": "de503a0b-77af-43a1-9277-f8e51feb7e48",
+				"method": "POST"
+			},
+			{
+				"id": "aabaf013-a860-4aed-b2f8-4da0025d55fe",
+				"method": "POST"
+			},
+			{
+				"id": "afa54771-7e79-4d68-b369-2dbc8542b2ee",
+				"method": "POST"
+			},
+			{
+				"id": "75e87405-d014-404a-af0f-fef5f79034a9",
+				"method": "POST"
+			},
+			{
+				"id": "89c1b9d5-0f56-4581-bd40-6c83d10eee3d",
+				"method": "POST"
+			},
+			{
+				"id": "076f4fcf-51db-46f4-b9d0-dba9bd742de5",
+				"method": "POST"
+			}
+		]
+	}
+}
