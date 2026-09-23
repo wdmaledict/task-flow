@@ -15,13 +15,12 @@ A modern, lightweight Kanban board application built from scratch using custom P
 ## 📁 Project Structure
 
 ```text
-├── Core/               # Framework core (Container, Database, Router, App)
+├── Core/               # Framework core (Router, Database, Response, helper functions)
 ├── controllers/        # Application controllers
 ├── database/           # Database schema (SQL dump, no data)
 ├── postman/            # Postman collection + docs for API/middleware testing
-├── public/             # Web root (index.php entry point and assets)
+├── public/             # Web root (index.php entry point: session start, autoloading, routing)
 ├── views/              # View templates and partials
-├── bootstrap.php       # Application container and dependency injection setup
 ├── config.php          # Database and application configuration
 ├── routes.php          # Application routing definitions
 └── .gitattributes
